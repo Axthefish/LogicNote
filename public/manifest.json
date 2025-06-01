@@ -1,0 +1,22 @@
+{
+  "name": "LogicNote - 智能文本分析与知识图谱工具",
+  "short_name": "LogicNote",
+  "description": "使用 AI 技术分析文本内容，自动生成知识图谱",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ffffff",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png", 
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

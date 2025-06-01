@@ -1,0 +1,7 @@
+# Robots.txt for LogicNote
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://logicnote.app/sitemap.xml 

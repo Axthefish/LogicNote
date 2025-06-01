@@ -1,0 +1,19 @@
+{
+  "indexes": [
+    {
+      "collectionGroup": "graphs",
+      "queryScope": "COLLECTION",
+      "fields": [
+        {
+          "fieldPath": "knowledgeSystemId",
+          "order": "ASCENDING"
+        },
+        {
+          "fieldPath": "updatedAt",
+          "order": "DESCENDING"
+        }
+      ]
+    }
+  ],
+  "fieldOverrides": []
+}
