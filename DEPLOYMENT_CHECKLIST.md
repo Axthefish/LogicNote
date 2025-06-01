@@ -89,6 +89,40 @@
 4. 设置备份策略
 5. 创建用户文档和使用指南
 
+## ⚠️ 重要：避免平台冲突
+- ✅ 使用 Vercel 部署 Next.js 前端
+- ✅ 使用 Firebase Functions 部署云函数
+- ❌ 不要使用 Firebase Hosting（已移除）
+
+## 🔍 故障排除
+
+### 1. Vercel 404 错误
+- [ ] 检查环境变量是否全部设置
+- [ ] 确认没有 Firebase Hosting 冲突
+- [ ] 查看 Vercel Build Logs
+- [ ] 查看 Vercel Runtime Logs
+- [ ] 确认 Git 仓库连接正确
+
+### 2. 环境变量检查
+```bash
+# 在 Vercel 控制台必须设置的变量：
+NEXT_PUBLIC_FIREBASE_API_KEY
+NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN
+NEXT_PUBLIC_FIREBASE_PROJECT_ID
+NEXT_PUBLIC_FIREBASE_STORAGE_BUCKET
+NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID
+NEXT_PUBLIC_FIREBASE_APP_ID
+NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID
+ANTHROPIC_API_KEY
+NEXT_PUBLIC_BASE_URL
+```
+
+### 3. 部署后验证
+- [ ] 访问 https://logic-note.vercel.app
+- [ ] 检查控制台是否有错误
+- [ ] 测试 Claude API 连接
+- [ ] 测试 Firebase 连接
+
 ---
 
 完成所有检查项后，你的应用就准备好发布了！🎉 
