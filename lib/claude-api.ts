@@ -2,7 +2,7 @@ import Anthropic from '@anthropic-ai/sdk';
 
 // Initialize Claude API client
 const anthropic = new Anthropic({
-  apiKey: process.env.ANTHROPIC_API_KEY || 'your-anthropic-api-key-here',
+  apiKey: process.env.ANTHROPIC_API_KEY || '',
   // Note: In production, API key should only be used on server-side
   // Consider using API routes or server components for security
 });
@@ -110,5 +110,5 @@ export async function generateConceptInsights(
  * @returns Boolean indicating if API is ready
  */
 export function isClaudeAPIConfigured(): boolean {
-  return !!process.env.ANTHROPIC_API_KEY || true; // Returns true since we have a default key
+  return !!process.env.ANTHROPIC_API_KEY;
 } 
