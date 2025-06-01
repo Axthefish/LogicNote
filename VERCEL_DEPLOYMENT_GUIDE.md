@@ -1,5 +1,20 @@
 # Vercel 部署指南
 
+## 重要提示：Firebase 和 Vercel 冲突
+
+⚠️ **不要同时使用 Firebase Hosting 和 Vercel！** 
+- Firebase Functions ✅ 可以使用
+- Firebase Hosting ❌ 必须禁用（已在 firebase.json 中移除）
+
+## 部署架构
+
+- **前端（Next.js）**: 部署在 Vercel
+- **后端 API**: 
+  - Next.js API Routes（部署在 Vercel）
+  - Firebase Functions（部署在 Firebase）
+- **数据库**: Firebase Firestore
+- **存储**: Firebase Storage
+
 ## ✅ 部署前检查清单
 
 ### 1. Git 仓库准备 ✅
@@ -25,7 +40,7 @@
 git add .
 
 # 提交代码
-git commit -m "Initial commit: LogicNote with Firebase and Claude integration"
+git commit -m "fix: remove firebase hosting conflict"
 ```
 
 ### 第二步：推送到 GitHub
@@ -121,6 +136,25 @@ NEXT_PUBLIC_BASE_URL=https://your-app.vercel.app
 3. **Firebase 连接问题**：
    - 确保域名已添加到 Firebase 授权列表
    - 检查 Firebase 配置是否正确
+
+### 1. 确保环境变量设置正确
+在 Vercel Dashboard 中设置所有必需的环境变量（见 VERCEL_ENV_SETUP.md）
+
+### 2. 推送代码到 GitHub
+```bash
+git add .
+git commit -m "fix: remove firebase hosting conflict"
+git push origin main
+```
+
+### 3. Vercel 自动部署
+Vercel 会自动检测到新的提交并开始部署
+
+### 4. 部署 Firebase Functions（如果需要）
+```bash
+# 只部署 Functions，不部署 Hosting
+firebase deploy --only functions
+```
 
 ---
 
