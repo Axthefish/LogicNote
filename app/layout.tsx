@@ -20,7 +20,11 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL(process.env.NEXT_PUBLIC_BASE_URL || 'https://logicnote.app'),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_BASE_URL?.startsWith('http') 
+      ? process.env.NEXT_PUBLIC_BASE_URL 
+      : `https://${process.env.NEXT_PUBLIC_BASE_URL || 'logic-note.vercel.app'}`
+  ),
   openGraph: {
     title: "LogicNote - 智能文本分析与知识图谱工具",
     description: "使用 AI 技术分析文本内容，自动生成知识图谱",
